@@ -28,13 +28,7 @@ jobs:
         with:
           python-version: '3.9'
           cache: 'pip' # caching pip dependencies
-      - run: pip install -r requirements.txt
-      
-      # install all the dependencies
-      - name: dependencies
-        run: |
-          pip install black
-          pip install codespell
+      - run: pip install black codespell
           
       # runs the black formarter (
       - name: run black
@@ -43,5 +37,5 @@ jobs:
         
       # runs the codespell (list all the typos)
       - name: run codespell
-        run: codespell -d 
+        run: codespell
         shell: bash
